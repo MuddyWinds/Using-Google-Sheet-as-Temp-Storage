@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <script>
+    function callReports() {
+      document.getElementById("link").style.display="none";
+      document.getElementById("Title").style.display="none";
+      google.script.run.withSuccessHandler(onSuccess1).withFailureHandler(onFailure).returnReports(); }
+
+    function onSuccess1(allInfo) {
+      if (allInfo.length) {
+        allInfo.map(function(info,i) {
+          var item = document.createElement("li");
+          var btn = document.createElement("button");
+          var t = document.createTextNode(allInfo[i]);
+          btn.appendChild(t);
+          item.appendChild(btn);
+          document.getElementById("list").appendChild(item);
+          item.addEventListener('click', function() {
+            google.script.run.withSuccessHandler(onSuccess).withFailureHandler(onFailure).editReportPrefill(item.textContent);
+            document.getElementById("Title").innerHTML = item.textContent;
+          });
+        })
+      }
+    }
+
+    function onFailure(e) { alert(e); }
+
+    function onSuccess(getURL) {
+      if (getURL != null) {
+        document.getElementById("list").style.display = "none";
+        document.getElementById("link").style.removeProperty( 'display' );
+        document.getElementById("Title").style.removeProperty( 'display' );
+        document.getElementById('link').src = getURL; }
+    }
+
+  </script>
+
+  <style>
+    ol {
+      padding-inline-start: 0px;
+    }
+    ol li {
+      line-height: 200%;
+    } 
+  </style>
+
+
+  <body>
+    <body onload="callReports()">
+    <ol id="list"></ol>      
+    <p id="Title" style="font-family:verdana"> </p>
+    <iframe id='link' src="" width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+  </body>
+</html>
