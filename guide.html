@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <script>
+    function openGuide(clicked_id) {
+      var guideText = document.getElementById("guidance");
+      google.script.run.withSuccessHandler(onSuccess).withFailureHandler(onFailure).displayGuide(clicked_id);
+      if (guideText.style.display === "none")   { guideText.style.display = "block"; } 
+      else                                      { guideText.style.display = "none";  }
+    }
+
+    function onSuccess(text) {
+      document.getElementById('guidance').innerHTML = text;
+    }
+
+    function onFailure(e) { alert(e); }
+
+  </script>
+
+  <body>
+    <p style="font-family:verdana"> 📄Document: 
+      <button onclick="openGuide(this.id)" id="01" style="font-family:verdana"> Create a report </button>
+      <button onclick="openGuide(this.id)" id="02" style="font-family:verdana"> Edit a report </button>
+      <button onclick="openGuide(this.id)" id="03" style="font-family:verdana"> Create a source </button>
+      <button onclick="openGuide(this.id)" id="04" style="font-family:verdana"> Edit a source </button>
+    </p>
+
+    <p style="font-family:verdana"> 🔍Advanced: 
+      <button onclick="openGuide(this.id)" id="05" style="font-family:verdana"> Version History </button>
+      <button onclick="openGuide(this.id)" id="06" style="font-family:verdana"> Delete Invalid Inputs </button>
+      <button onclick="openGuide(this.id)" id="07" style="font-family:verdana"> Hide Invalid Inputs </button>
+      <button onclick="openGuide(this.id)" id="08" style="font-family:verdana"> Unhide Invalid Inputs </button>
+    </p>
+    <p style="font-family:verdana"> ----------------------------------------------------------------------------------------------------------- </p>
+
+
+    <div id="guidance" style="font-family:verdana">  </div>
+  </body>
+</html>
