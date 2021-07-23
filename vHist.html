@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <script>
+    function callReports() {
+      document.getElementById("Title").style.display="none";
+      google.script.run.withSuccessHandler(onSuccess1).withFailureHandler(onFailure).returnReports(); }
+
+    function onSuccess1(allInfo) {
+      if (allInfo.length) {
+        allInfo.map(function(info,i) {
+          var item = document.createElement("li");
+          var btn = document.createElement("button");
+          var t = document.createTextNode(allInfo[i]);
+          btn.appendChild(t);
+          item.appendChild(btn);
+          document.getElementById("list").appendChild(item);
+          item.addEventListener('click', function() {
+            google.script.run.withSuccessHandler(onSuccess).withFailureHandler(onFailure).displayR(item.textContent);
+            document.getElementById("Title").innerHTML = item.textContent;
+          });
+        })
+      }
+    }
+
+    function onSuccess(versionHist) {
+      document.getElementById("list").style.display = "none";
+      document.getElementById("Title").style.removeProperty( 'display' );
+      if (versionHist != []) {
+        document.getElementById('word').innerHTML = versionHist.replace(/(.*\n)/g, '$1<br>');
+      }
+      else {
+        document.getElementById('word').innerHTML = "Report unexists / Report version has not been initialised.";
+      }
+    }
+
+    function onFailure(e) { alert(e); }
+
+  </script>
+
+    <style>
+    ol {
+      padding-inline-start: 0px;
+    }
+    ol li {
+      line-height: 200%;
+    } 
+  </style>
+  
+  <body>
+    <body onload="callReports()";>
+    <ol id="list"></ol>  
+    <p id="Title" style="font-family:verdana";> </p>
+    <p id="word" style="font-family:verdana";> </p>
+    </body>
+</html>
+
+
