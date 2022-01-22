@@ -5,7 +5,8 @@ This project is not a stand-alone program, but instead a supplementary program r
 It could be used together with Apps Sheet to build an App for personal use.
 
 ## Features
-Create Report / Edit report / Create Source / Edit Source
-Send automatic alert emails if the report / source files are crashed
-See the 
-Display a user guide 
+* Create Report 
+* Edit report 
+* Create Source 
+* Edit Source
+* Send automatic alert emails if the report / source files are crashed
