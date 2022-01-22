@@ -7,7 +7,7 @@ It could be used together with Apps Sheet to build an App for personal use.
 
 ## Features
 
-#### Create/Edit Report
+### Create/Edit Report
 
 *Create Report*: Top bar menu -> Create Report -> Open Google Form -> New row of data appended to the bottom
 
@@ -17,7 +17,7 @@ It could be used together with Apps Sheet to build an App for personal use.
 
 &nbsp;
 
-#### Show Version History
+### Show Version History
 
 Unlike the Google default version history function, this list only displays the versions with user updated timestamp.
 
@@ -25,9 +25,9 @@ Unlike the Google default version history function, this list only displays the 
 
 &nbsp;
   
-#### Send automatic alert emails if the report / source files are crashed
+### Send automatic alert emails if the report / source files are crashed
 
 &nbsp;
 
-#### Customise your Google Sheet and update user guide**
+### Customise your Google Sheet and update user guide
 ![Screenshot 2022-01-22 at 3 10 29 PM](https://user-images.githubusercontent.com/90823283/150628833-5bb7e737-0eb5-4381-986a-9d1bd7715897.png)
