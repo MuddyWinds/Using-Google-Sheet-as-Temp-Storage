@@ -4,6 +4,9 @@ This project is not a stand-alone program, but instead a supplementary program r
 
 It could be used together with Apps Sheet to build an App for personal use.
 
+
+## Features
+
 **1. Create/Edit Report**
 
 *Create Report*: Top bar menu -> Create Report -> Open Google Form -> New row of data appended to the bottom
