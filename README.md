@@ -1,4 +1,4 @@
-# Google Sheet add-om: Temporary Report Storage
+# Google Sheet Add-on: Temporary Report Storage
 
 This project is not a stand-alone program, but instead a supplementary program running on Google App Script, A JavaScript cloud scripting language that provides an easy way to automate tasks across Google products and third party services to build simple web applications. The aim of this project is to use google sheets, a cheap and easily accessible tool, as a simple database.
 
