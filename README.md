@@ -8,7 +8,7 @@ It could be used together with Apps Sheet to build an App for personal use.
 **1. Create/Edit Report**
 
 Similarly, source files can be created or edited in such way.
-https://user-images.githubusercontent.com/90823283/150628324-fc3bc3bf-d247-4bab-b1ba-b06c3f0f3d70.mp4
+[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://user-images.githubusercontent.com/90823283/150628324-fc3bc3bf-d247-4bab-b1ba-b06c3f0f3d70.mp4)
 
 **2. Show Version History**
 
